@@ -5,11 +5,12 @@ const views = __dirname + "/views/"
 
 const profile = {
   name: "Fabiana",
-  avatar: "https://avatars.githubusercontent.com/u/40132219?v=4",
+  avatar: "https://github.com/fabianapduarte.png",
   "monthly-budget": 3000,
   "days-per-week": 5,
   "hours-per-day": 5,
-  "vacation-per-year": 4
+  "vacation-per-year": 4,
+  "value-hour": 75
 }
 
 const jobs = [
@@ -17,7 +18,7 @@ const jobs = [
     id: 1,
     name: "Pizzaria Guloso",
     "daily-hours": 2,
-    "total-hours": 60,
+    "total-hours": 1,
     createdAt: Date.now()
   },
   {
@@ -29,7 +30,37 @@ const jobs = [
   }
 ]
 
-routes.get('/', (req, res) => res.render(views + "index", { jobs }))
+function remainingDays(job) {
+  const remainingDays = (job["total-hours"] / job["daily-hours"]).toFixed() //retorna string
+
+  const createdDate = new Date(job.createdAt)
+  const dueDay = createdDate.getDate() + Number(remainingDays)
+  const dueDateInMs = createdDate.setDate(dueDay)
+
+  const timeDiffInMs = dueDateInMs - Date.now()
+  // transformar milisegundos em dias
+  const dayInMs = 1000 * 60 * 60 * 24
+  const dayDiff = Math.floor(timeDiffInMs / dayInMs)
+
+  // restam x dias
+  return dayDiff
+}
+
+routes.get('/', (req, res) => {
+  const updatedJobs = jobs.map((job) => {
+    const remaining = remainingDays(job)
+    const status = remaining <= 0 ? 'done' : 'progress'
+
+    return {
+      ...job,
+      remaining,
+      status,
+      budget: profile["value-hour"] * job["total-hours"]
+    }
+  })
+
+  return res.render(views + "index", { jobs: updatedJobs })
+})
 routes.get('/job', (req, res) => res.render(views + "job"))
 routes.post('/job', (req, res) => {
   const lastId = jobs[jobs.length - 1]?.id || 1
