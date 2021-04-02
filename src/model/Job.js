@@ -21,7 +21,7 @@ module.exports = {
   },
 
   update(newJob) {
-    data = new Job
+    data = newJob
   },
 
   delete(jobId) {
