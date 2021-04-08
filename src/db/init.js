@@ -1,4 +1,4 @@
-const Database = require('config')
+const Database = require('./config')
 
 // inicia a conexão
 Database()
