@@ -154,7 +154,7 @@ main {
 /* -------------------------------------------------- */
 .card {
   display: grid;
-  grid-template-columns: 5% 35% 20% 15% 15% 10%;
+  grid-template-columns: 32.5% 12.5% 20% 12.5% 12.5% 10%;
   align-items: center;
 
   margin-bottom:  0.5rem;
@@ -209,12 +209,6 @@ main {
   font-weight: 600;
 }
 
-.column.id {
-  font-family: IBM Plex Sans;
-  font-weight: 600;
-  color: var(--color-card-label);
-}
-
 .column.name {
   font-family: IBM Plex Sans;
   font-weight: 600;
@@ -229,7 +223,7 @@ main {
 
 @media(max-width:1390px) {
   .card {
-    grid-template-columns: 5% 30% 20% 15% 17.25% 12.25%;
+    grid-template-columns: 25% 12.5% 20% 15% 17.5% 10%;
   }
 }
 
@@ -238,7 +232,7 @@ main {
     grid-template-columns: 31% 23% 13% 20.25% 12.25%;
   }
   
-  .column.id {
+  .column.daily-hours {
     display: none;
   }
 }
@@ -254,10 +248,6 @@ main {
     gap: .5rem;
   }
 
-  .column.id {
-    display: none;
-  }
-
   .column.name {
     grid-area: lt;
   }
@@ -270,6 +260,9 @@ main {
   .column.status {
     justify-self: end;
     grid-area: rt;
+  }
+  .column.daily-hours {
+    display: none;
   }
   .column.actions{
     grid-area: rb;

@@ -81,9 +81,12 @@
 
           <% jobs.forEach((job) => { %>
             <div class="card <%= job.status %> " data-id="<%= job.id %> ">
-              <div class="id column"><%= job.id %> </div>
               <div class="name column">
                 <%= job.name %> 
+              </div>
+              <div class="daily-hours column">
+                <span>Horas diárias</span>
+                <p><%= job["daily-hours"] %> horas</p>
               </div>
               <div class="deadline column">
                 <span>Prazo</span>
