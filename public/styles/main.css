@@ -56,12 +56,6 @@
   }
 }
 
-@media(max-width: 590px) {
-  :root {
-    font-size: 62.25%; /* 10px */
-  }
-}
-
 /* tags styling */
 body {
   background: var(--color-background);

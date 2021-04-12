@@ -216,7 +216,7 @@ main {
   line-height: 2.125rem;
 }
 
-.column.actions button img {
+.column.actions .button img {
   width: 1.5rem;
   height: 1.5rem;
 }
@@ -266,5 +266,35 @@ main {
   }
   .column.actions{
     grid-area: rb;
+  }
+}
+
+@media(max-width: 600px) {
+  #top {
+    display: grid;
+    grid-template-areas:
+    "logo profile"
+    "notification notification"
+    ;
+    grid-auto-columns: max-content;
+  }
+
+  #logo {
+    grid-area: logo;
+  }
+
+  #avatar-profile {
+    grid-area: profile;
+  }
+
+  #notification {
+    grid-area: notification;
+
+    margin: 1rem 0;
+    justify-content: center;
+  }
+
+  #summary {
+    flex-direction: column;
   }
 }
