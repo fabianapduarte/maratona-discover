@@ -31,3 +31,51 @@ aside .button + .button {
   width: 3rem;
   height: 3rem;
 }
+
+@media(max-width: 900px) {
+  aside.card {
+    margin-left: 4rem;
+  }
+}
+
+@media(max-width: 650px) {
+  aside.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-left: 3rem;
+    padding: 3rem 2.5rem;
+    width: 18rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .input-wrapper + .input-wrapper {
+    margin-left: 0 !important;
+    margin-top: 1.5rem;
+  }
+}
+
+@media(max-width: 511px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .container form {
+    margin-bottom: 3rem;
+  }
+
+  aside.card {
+    align-items: center;
+
+    width: 100%;
+    margin-left: 0;
+  }
+}
