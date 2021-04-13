@@ -61,3 +61,18 @@ input {
 .input-wrapper {
   width: 50%;
 }
+
+@media(max-width: 500px) {
+  form .input-group {
+    flex-direction: column;
+  }
+
+  form .input-wrapper {
+    width: 100%;
+  }
+
+  form .input-group .input-wrapper + .input-wrapper {
+    margin-left: 0;
+    margin-top: 1.5rem;
+  }
+}
