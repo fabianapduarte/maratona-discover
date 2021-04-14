@@ -72,6 +72,12 @@ textarea {
 
 a {
   text-decoration: none;
+  color: var(--color-secondary);
+  transition: .2s color;
+}
+
+a:hover {
+  color: var(--color-secondary-hover);
 }
 
 /* basic classes */
