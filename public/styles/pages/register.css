@@ -1,0 +1,44 @@
+#page-register .page-header .logo {
+  height: 1.75rem;
+}
+
+#page-register .page-header ~ .container {
+  margin: 3rem 0;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+}
+
+#page-register .card {
+  width: 50vw;
+
+  overflow-y: auto;
+}
+
+form .button {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+@media(max-width: 900px) {
+  #page-register .card {
+    width: 70vw;
+  }
+}
+
+@media(max-width: 500px) {
+  #page-register .card {
+    width: 85vw;
+  }
+  
+  #page-register .page-header .container {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 1rem;
+  }
+
+  #page-register .page-header .container h1 {
+    text-align: end;
+    margin: 0;
+  }
+}

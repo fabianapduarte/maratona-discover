@@ -1,12 +1,140 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Register</title>
-</head>
-<body>
-  <div>register</div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#41414C" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/png" />
+    <title>Cadastro</title>
+
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/pages/register.css" />
+    <link rel="stylesheet" href="/styles/partials/page-header.css" />
+    <link rel="stylesheet" href="/styles/partials/cards.css" />
+    <link rel="stylesheet" href="/styles/partials/buttons.css" />
+    <link rel="stylesheet" href="/styles/partials/forms.css" />
+    <link rel="stylesheet" href="/styles/partials/animations.css" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body id="page-register">
+    <header class="page-header inner">
+      <div class="container">
+        <img src="/images/logo.svg" class="logo" alt="Logo">
+        <h1>Cadastro</h1>
+      </div>
+    </header>
+
+    <div class="container">
+      <main>
+        <div class="card animate-up">
+          <form action="" id="form-register">
+            <fieldset>
+              <legend>Dados de autenticação</legend>
+              <div class="separator light"></div>
+
+              <div class="input-wrapper" style="width: 100%;">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" name="email" />
+              </div>
+
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <label for="password">Senha</label>
+                  <input type="password" id="password" name="password" />
+                </div>
+
+                <div class="input-wrapper">
+                  <label for="confirm-password">Confirmar senha</label>
+                  <input type="password" id="confirm-password" name="confirm-password" />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Dados do perfil</legend>
+              <div class="separator light"></div>
+  
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <label for="name">Nome</label>
+                  <input type="text" id="name" name="name" />
+                </div>
+  
+                <div class="input-wrapper">
+                  <label for="avatar">Link da foto</label>
+                  <input 
+                  placeholder="https://"
+                  type="url" 
+                  id="avatar" 
+                  name="avatar" />
+                </div>
+              </div>
+            </fieldset>
+  
+            <fieldset>
+              <legend>Planejamento</legend>
+              <div class="separator light"> </div>
+  
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <label for="monthly-budget">Quanto eu <br/>quero ganhar por mês?</label>
+                  <input 
+                    type="amount"
+                    step="0.1" 
+                    id="monthly-budget" 
+                    name="monthly-budget" 
+                    placeholder="R$" />
+                </div>
+  
+                <div class="input-wrapper">
+                  <label for="hours-per-day">Quantas horas <br/>
+                    quero trabalhar por dia?</label>
+                  <input 
+                    type="number"
+                    id="hours-per-day" 
+                    name="hours-per-day" />
+                </div>
+              </div>
+  
+              <div class="input-group">
+                <div class="input-wrapper">
+                  <label for="days-per-week">Quantos dias <br/>quero
+                    trabalhar por semana?</label>
+                  <input
+                    type="number"
+                    id="days-per-week" 
+                    name="days-per-week" />
+                </div>
+  
+                <div class="input-wrapper">
+                  <label for="vacation-per-year">Quantas semanas <br/>
+                    por ano você quer tirar férias?</label>
+                  <input 
+                    type="number" 
+                    id="vacation-per-year" 
+                    name="vacation-per-year" />
+                </div>
+              </div>
+            </fieldset>
+
+            <button class="button green" form="form-register" type="submit">Criar nova conta</button>
+          </form>
+
+          <div class="separator light"></div>
+
+          <section>
+            <p>
+              Possui uma conta? <a href="/login">Faça login</a>
+            </p>
+          </section>
+        </div>
+      </main>
+    </div>
+  </body>
 </html>
