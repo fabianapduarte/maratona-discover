@@ -8,6 +8,8 @@ const initDb = {
     // cria as tabelas
     await db.exec(`CREATE TABLE profile (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
+      email TEXT,
+      password TEXT,
       name TEXT,
       avatar TEXT,
       monthly_budget INT,
@@ -33,7 +35,9 @@ const initDb = {
       days_per_week,
       hours_per_day,
       vacation_per_year,
-      value_hour
+      value_hour,
+      email,
+      password
     ) VALUES (
       "Fabiana",
       "https://github.com/fabianapduarte.png",
@@ -41,7 +45,9 @@ const initDb = {
       5,
       5,
       4,
-      75
+      75,
+      "fabiana@email.com",
+      "senha123"
     );`)
 
     await db.run(`INSERT INTO jobs (
