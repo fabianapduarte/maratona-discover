@@ -15,7 +15,7 @@ module.exports = {
       createdAt: Date.now()
     })
   
-    return res.redirect('/')
+    return res.redirect('/home')
   },
 
   async show(req, res) {
@@ -54,6 +54,6 @@ module.exports = {
 
     await Job.delete(jobId)
     
-    return res.redirect('/')
+    return res.redirect('/home')
   }
 }
