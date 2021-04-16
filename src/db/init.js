@@ -6,7 +6,7 @@ const initDb = {
     const db = await Database()
 
     // cria as tabelas
-    await db.exec(`CREATE TABLE profile (
+    await db.exec(`CREATE TABLE users (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       email TEXT,
       password TEXT,
@@ -21,14 +21,16 @@ const initDb = {
 
     await db.exec(`CREATE TABLE jobs (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
+      idUser INTEGER,
       name TEXT,
       daily_hours INT,
       total_hours INT,
-      created_at DATETIME
+      created_at DATETIME,
+      FOREIGN KEY (idUser) REFERENCES users(id)
     );`)
 
     // inserção de dados
-    await db.run(`INSERT INTO profile (
+    await db.run(`INSERT INTO users (
       name,
       avatar,
       monthly_budget,
@@ -52,11 +54,13 @@ const initDb = {
 
     await db.run(`INSERT INTO jobs (
       name,
+      idUser,
       daily_hours,
       total_hours,
       created_at
     ) VALUES (
       "Pizzaria Guloso",
+      1,
       2,
       1,
       1617514376018
@@ -64,11 +68,13 @@ const initDb = {
 
     await db.run(`INSERT INTO jobs (
       name,
+      idUser,
       daily_hours,
       total_hours,
       created_at
     ) VALUES (
       "OneTwo Project",
+      1,
       3,
       47,
       1617514376018
